@@ -66,7 +66,8 @@ y crea políticas que limiten qué filas puede leer o modificar cada usuario.
 ### Vista de comprobación
 
 Para abrir una vista local que comprueba la conexión y muestra los recuentos de
-`casillas` y `resultados` mediante peticiones de solo lectura, ejecuta:
+`casillas` y `resultados` mediante peticiones `HEAD` que sólo solicitan `id` y no
+descargan registros, ejecuta:
 
 ```bash
 npm run preview

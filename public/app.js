@@ -9,7 +9,8 @@ function setStatus(state, message) {
 }
 
 async function countRows(table) {
-  const response = await fetch(`${url}/rest/v1/${table}?select=*`, {
+  const response = await fetch(`${url}/rest/v1/${table}?select=id`, {
+    method: 'HEAD',
     headers: {
       apikey: publishableKey,
       Authorization: `Bearer ${publishableKey}`,
@@ -41,7 +42,7 @@ async function checkConnection() {
     document.querySelector('#casillas-count').textContent = casillas
     document.querySelector('#resultados-count').textContent = resultados
     setStatus('success', 'Conexión establecida con Supabase.')
-    details.textContent = 'Los datos mostrados se obtuvieron mediante consultas de solo lectura.'
+    details.textContent = 'Los recuentos se obtuvieron sin descargar registros.'
   } catch (error) {
     setStatus('error', 'No fue posible conectar con Supabase.')
     details.textContent = error instanceof Error ? error.message : 'Error de conexión desconocido.'
