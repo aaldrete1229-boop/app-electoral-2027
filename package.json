@@ -1,0 +1,13 @@
+{
+  "name": "app-electoral-2027",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "prepare-config": "node ./scripts/generate-runtime-config.mjs",
+    "preview": "npm run prepare-config && python3 -m http.server 4173 --bind 0.0.0.0 --directory public"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.0.0"
+  }
+}
