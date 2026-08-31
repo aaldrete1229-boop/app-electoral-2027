@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estado de Supabase | Electoral 2027</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <p class="eyebrow">Electoral 2027</p>
+      <h1>Estado de conexión</h1>
+      <p class="intro">Comprobación de solo lectura de las tablas públicas de Supabase.</p>
+
+      <section class="connection-card" aria-labelledby="connection-title">
+        <div id="connection-indicator" class="indicator pending" aria-hidden="true"></div>
+        <div>
+          <h2 id="connection-title">Supabase</h2>
+          <p id="connection-status" role="status">Conectando…</p>
+        </div>
+      </section>
+
+      <section class="counts" aria-label="Recuento de registros">
+        <article>
+          <p>Casillas</p>
+          <strong id="casillas-count">—</strong>
+          <span>registros</span>
+        </article>
+        <article>
+          <p>Resultados</p>
+          <strong id="resultados-count">—</strong>
+          <span>registros</span>
+        </article>
+      </section>
+
+      <p id="details" class="details"></p>
+    </main>
+    <script src="./supabase-config.js"></script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
